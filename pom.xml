@@ -47,6 +47,8 @@
 							<mainClass>com.example.OnboardingRequest</mainClass>
 						</manifest>
 					</archive>
+					<source>1.5</source>
+					<target>1.8</target>
 				</configuration>
 				<executions>
 					<execution>
