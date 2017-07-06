@@ -5,6 +5,11 @@
 	<artifactId>ActivitiDeveloperQuickStart</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ActivitiDeveloperQuickStart</name>
+	
+	<properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
 
 	<dependencies>
 		<dependency>
@@ -47,7 +52,7 @@
 							<mainClass>com.example.OnboardingRequest</mainClass>
 						</manifest>
 					</archive>
-					<source>1.5</source>
+					<source>1.8</source>
 					<target>1.8</target>
 				</configuration>
 				<executions>
