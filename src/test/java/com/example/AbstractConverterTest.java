@@ -21,6 +21,7 @@ public class AbstractConverterTest {
 		InputStreamReader in = new InputStreamReader(xmlStream, "UTF-8");
 		XMLStreamReader xtr = xif.createXMLStreamReader(in);
 		BpmnModel bpmnModel = new BpmnXMLConverter().convertToBpmnModel(xtr);
+		System.out.println(bpmnModel.toString());
 	}
 	
 }
