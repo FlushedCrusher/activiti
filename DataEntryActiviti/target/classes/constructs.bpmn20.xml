@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE definitions [
-  <!ENTITY pid "sampleProcess">
-  <!ENTITY pName "Sample Process">
-]>
+
 <definitions id="definitions"
     targetNamespace="http://activiti.org/bpmn20"
     xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL"
@@ -10,7 +7,7 @@
     xmlns:activiti="http://activiti.org/bpmn">
   
   <!-- Process Definition -->
-  <process id="&pid;" name="&pName;">
+  <process id="sampleProcess" name="Sample Process">
     
     <!--  Process start event -->
     <startEvent id="startSampleProcess" name="Start" activiti:initiator="initiator"></startEvent>

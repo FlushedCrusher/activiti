@@ -16,20 +16,31 @@ public class DataEntryRequest {
 	
 	public static void main(String[] args) {
 		/*
-		 * Load JDBC Properties file
+		 * Load Properties files
 		 */
 		Properties jdbc = new Properties();
+		Properties form = new Properties();
 		InputStream jdbcInput = null;
+		InputStream formInput = null;
 		
 		try {
 			jdbcInput = ClassLoader.getSystemResourceAsStream("jdbc.properties");
+			formInput = ClassLoader.getSystemResourceAsStream("form.properties");
 			jdbc.load(jdbcInput);
+			form.load(formInput);
 		} catch (IOException ex) {
 			ex.printStackTrace();
 		} finally {
 			if (jdbcInput != null) {
 				try {
 					jdbcInput.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			if (formInput != null) {
+				try {
+					formInput.close();
 				} catch (IOException e) {
 					e.printStackTrace();
 				}
@@ -58,7 +69,7 @@ public class DataEntryRequest {
 		/*
 		 * Get deployment with our process definition
 		 */
-		Deployment deployment = repositoryService.createDeployment().addClasspathResource("constructs.bpmn20.xml")
+		Deployment deployment = repositoryService.createDeployment().addClasspathResource(form.getProperty("PROCESS"))
 				.deploy();
 		ProcessDefinition processDefinition = repositoryService.createProcessDefinitionQuery()
 				.deploymentId(deployment.getId()).singleResult();
