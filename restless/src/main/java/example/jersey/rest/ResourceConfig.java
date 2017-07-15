@@ -6,16 +6,16 @@ import java.util.Set;
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
-import example.jersey.rest.controller.Controller;
+import example.jersey.rest.resources.Greeter;
 
 @ApplicationPath("/")
-public class AppConfig extends Application{
+public class ResourceConfig extends Application{
 
 	@Override
 	public Set<Class<?>> getClasses() {
 		final Set<Class<?>> classes = new HashSet<>();
 		
-		classes.add(Controller.class);
+		classes.add(Greeter.class);
 		
 		return classes;
 	}
